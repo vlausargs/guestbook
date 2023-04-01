@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Reply from './reply'
 import moment from 'moment/moment'
+import CreateReply from './createReply'
 
 const GuestList = ({ item }) => {
     const [openReply, setOpenReply] = useState(false)
@@ -23,7 +24,12 @@ const GuestList = ({ item }) => {
                     {item.reply.length} comments
                 </div>
             </div>
-            {openReply && <Reply parentId={item.id} />}
+            {openReply && (
+                <>
+                    <CreateReply parentId={item.id} />
+                    <Reply parentId={item.id} />
+                </>
+            )}
         </>
     )
 }

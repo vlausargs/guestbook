@@ -11,8 +11,8 @@ const Page = () => {
     const router = useRouter()
     const [identity, setidentity] = useState('')
     const [password, setpassword] = useState('')
-    const [token, setToken] = useAuthStore(
-        (state) => [state.token, state.setToken],
+    const [token, setToken, user, setUser] = useAuthStore(
+        (state) => [state.token, state.setToken, state.user, state.setUser],
         shallow
     )
 
@@ -22,7 +22,8 @@ const Page = () => {
         var res = await login(identity, password)
         if (res?.status != 200) return alert(res?.data?.message)
         setToken(res.data.token)
-        router.replace('/admin')
+        setUser(res.data.admin)
+        router.replace('/admin/guestbook')
     }
     return (
         <div
