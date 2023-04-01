@@ -86,7 +86,7 @@ const ModalCreate = ({ createUser, setShowModal }) => {
                                     )}
                                 </div>
                                 <input
-                                    type="text"
+                                    type="password"
                                     className="w-full appearance-none rounded border py-2 px-1 text-black shadow"
                                     onChange={(e) => {
                                         setPassword(e.target.value)
@@ -105,7 +105,7 @@ const ModalCreate = ({ createUser, setShowModal }) => {
                                     )}
                                 </div>
                                 <input
-                                    type="text"
+                                    type="password"
                                     className="w-full appearance-none rounded border py-2 px-1 text-black shadow"
                                     onChange={(e) => {
                                         setPasswordConfirm(e.target.value)
